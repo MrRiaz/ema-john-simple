@@ -1,8 +1,9 @@
-.header {
-    text-align: center;
-}
 .header img {
     height: 80px;
+}
+
+.header {
+    text-align: center;
 }
 
 .header nav{
