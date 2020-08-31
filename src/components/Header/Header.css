@@ -1,9 +1,11 @@
-.header img {
+/* .header img {
     height: 80px;
 }
-
+*/
 .header {
     text-align: center;
+    position: sticky;
+    top: 0;
 }
 
 .header nav{

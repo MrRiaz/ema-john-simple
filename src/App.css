@@ -1,6 +1,11 @@
 
-.App-link {
+.App {
   color: #61dafb;
+  text-align: center;
+}
+
+.App .img{
+  height: 80px;
 }
 
 @keyframes App-logo-spin {

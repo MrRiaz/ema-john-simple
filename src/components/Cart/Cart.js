@@ -3,13 +3,15 @@ import './Cart.css';
 
 const Cart = (props) => {
     const cart = props.cart;
-    console.log(cart);
-    const total = cart.reduce((total, pdt) => total + pdt.price, 0);
-    // let total = 0;
-    // for (let i = 0; i < cart.length; i++) {
-    //     const product = cart[i];
-    //     total = total + product.price;
-    // }
+    // console.log(cart);
+    // const total = cart.reduce((total, pdt) => total + pdt.price * pdt.quantity, 0);
+    // debugger;
+    let total = 0;
+    for (let i = 0; i < cart.length; i++) {
+        const product = cart[i];
+        total = total + product.price * product.quantity;
+        // debugger;
+    }
 
     let shipping = 0;
     if(total > 35){
@@ -35,18 +37,14 @@ const Cart = (props) => {
         <div className = 'cart'>
             <h2>Order Summary</h2>
             <p>Items order: {cart.length}</p>
-            <div className="show-salary">
-            {cart.map((cartitem) => (
-                <div className="row">
-                    <p className="text-left"> Seller: {cartitem.seller} </p>
-                    <p> Price: $ {cartitem.price}</p>
-                </div>
-                ))}
-            </div>
-            <p>Products Price: {formatNumber(total)}</p>
-            <p><small>Shipping: {shipping}</small></p>
-            <p><small>Tax + VAT: {tax} </small></p>
-            <p>Total Price: {formatNumber(grandTotal)} </p>
+            <p>Products Price: $ {formatNumber(total)}</p>
+            <p><small>Shipping: $ {shipping}</small></p>
+            <p><small>Tax + VAT: $ {tax} </small></p>
+            <p>Total Price: $ {formatNumber(grandTotal)} </p>
+            <hr/>
+            {
+                props.children
+            }
         </div>
     );
 };
