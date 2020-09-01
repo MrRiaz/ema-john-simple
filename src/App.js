@@ -22,8 +22,8 @@ function App() {
       <div className="App">
         <img className='img' src={logo} alt=""/>
       </div>
-      <Header></Header>
       <Router>
+        <Header></Header>
         <Switch>
           <Route path="/shop">
             <Shop></Shop>
